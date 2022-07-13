@@ -1,0 +1,152 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: var(--color-black);
+    font-family: var(--font-base);
+    padding: 0rem 2rem ;
+    text-transform: uppercase;
+    color: var(--color-white);
+}
+.logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.logo img {
+    width: 150px;
+}
+.navmenu ul {
+display: flex;
+justify-content: center;
+align-items: center;
+list-style: none;
+text-transform: uppercase;
+}
+.navmenu ul .link {
+    margin:  0 1rem;
+    cursor: pointer;
+    color: var(--color-white);
+    padding: 20px;
+    font-weight: 700; 
+    position: relative;
+    z-index: 2;
+    transition: color 0.6s;
+}
+.navmenu ul .link::after{
+    content: '';
+    background: var(--color-white);
+    width: 100%;
+    height: 50%;
+    border-radius: 30px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0;
+    transition: top 0.5s opacity 0.5s;
+}
+.navmenu ul .link:hover{
+    color: var(--color-black);
+}
+.navmenu ul .link:hover::after{
+top: 50%;
+opacity: 1;
+}
+.signup{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.signup a {
+    margin: 0 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition:  0.5s ease ; 
+    color: var(--color-white);
+}
+.signup a:hover{
+     border-bottom:  1px solid var(--color-golden);
+}
+.signup div{
+    width: 1px;
+    height: 30px;
+    background-color: var(--color-grey);
+}
+.small-screen{
+    display: none;
+}
+@media screen and (max-width: 2000px){
+    logo img {
+        width: 210px;
+    }
+}
+@media screen and (max-width: 1150px){
+    .navmenu ul{
+        display: none;
+    }
+    .small-screen{
+        display: flex;
+    }
+    .smallnavmenu {
+    position: fixed;
+    top: -100%;
+    left:0 ;
+    z-index: 1000;
+    background:var(--color-black);
+    width: 100%;
+    height: 100vh;
+    box-shadow: 2rem 0 2rem var(--color-golden);
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: showmenu 1.4s ease forwards;
+    }
+    @keyframes showmenu {
+    to{
+        top: 0;
+    }
+    }
+    .smallnavmenu ul{
+        list-style: none;
+    }
+    .smallnavmenu ul .link {
+        margin:  0 1rem;
+        cursor: pointer;
+        text-align: center;
+        color: var(--color-golden);
+        padding: 20px;
+        font-weight: 700; 
+    }
+    .close{
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 100;
+        font-size: 27px;
+        color: var(--color-golden);
+        cursor: pointer;
+    }
+}
+@media screen and (max-width: 650px){
+     nav{
+        padding: 1rem;
+     }
+     .signup{
+        display: none;
+     }
+      logo img {
+        width: 110px;
+      }
+      .smallnavmenu{
+        width: 100%;
+      }
+}
+
+
+
+
