@@ -11,6 +11,7 @@
 .app__newsletter-input {
     flex-direction: row;
     margin-top: 3rem;
+    position: initial;
 }
 
 .app__newsletter-input input {
